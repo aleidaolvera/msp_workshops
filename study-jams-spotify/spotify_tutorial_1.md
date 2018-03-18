@@ -107,9 +107,38 @@ Let's add some packages to our Meteor application. Type in the following command
         meteor add iron:router
 
 #### Bootstrap
+Let's paste the following code in our [`navbar.html`](navbar.html) file:
+```HTML
+<template name="navbar">
+  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">learnMeteor</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/user">User Information</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+</template>
 
+```
+Let's talk about what it does!
 
 #### Iron Router
+Now that we have a basic understanding of what our application is doing. Let's try and give the app some navigation. We're going to populate the other files that we just created and give our meteor applicaiton the ability to _**render**_ different layouts for different urls.
+
+
+
 
 ## Setting Up Spotify Developer Account
 Let's take a bit of a coding break and learn a bit more about Spotify's Web API.
