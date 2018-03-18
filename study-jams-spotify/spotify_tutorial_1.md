@@ -85,7 +85,7 @@ Meteor comes with a template library called Blaze and it will be utilized throug
 
 Using Blaze's templating system, it's easy to identify which portions of our code are templates. Can you correctly identify where each of the templates are?
 
-#### Enough talk.. let's create
+#### Enough talk.. Let's create!
 
 Meteor has some cool functionalities that allow us to create templates anywhere and meteor will bring them all together and identify where each template is automatically!
 > _This means we don't have to be constantly linking back and forth between files. We can organize files in any way we want and Meteor should be able to correctly identify them!_
@@ -132,21 +132,55 @@ Let's paste the following code in our [`navbar.html`](navbar.html) file:
 </template>
 
 ```
-Let's talk about what it does!
+Let's talk about what it does.
 
 #### Iron Router
 Now that we have a basic understanding of what our application is doing. Let's try and give the app some navigation. We're going to populate the other files that we just created and give our meteor applicaiton the ability to _**render**_ different layouts for different urls.
 
+Let's create the following folder / file heirarchy:
 
+        lib             # create a lib file
+        lib/router.js   # our router information
 
+Copy and paste the following code into the [router.js](router.js) file.
+
+```js
+    Router.configure( {
+      layoutTemplate: 'layout',
+    });
+
+    Router.onBeforeAction(function () {
+        this.next();
+    });
+
+    Router.map(function(){
+      this.route('/', function() {
+        this.render('search');
+      });
+
+      this.route('/user', {
+          name: 'userdata',
+          data: function(){
+              return Session.get('user');
+          }
+      });
+    });
+
+```
+
+Let's di
 
 ## Setting Up Spotify Developer Account
 Let's take a bit of a coding break and learn a bit more about Spotify's Web API.
 1. Head over to the [Spotify Developer website](https://developer.spotify.com/).
 2. Login to your account or create an account!
 3. Create an app!
-4. Make note of the following information:
+4. Make note of the following information for next week!
     - Client ID
     - Client Secret
 
-## Back to Meteor
+## Done! That's all for now!
+> Come back next week so we can go further in depth on how we can utilize Spotify's Web API and incorporate it into our application.
+
+#### Further Practice
+Come next week with some ideas on what you want to incorporate to our web application!
