@@ -1,0 +1,14 @@
+{
+  "name": "learn_meteor",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "meteor-node-stubs": "^0.3.2"
+  },
+  "devDependencies": {
+    "meteor-azure": "^2.1.0-rc.1"
+  }
+}

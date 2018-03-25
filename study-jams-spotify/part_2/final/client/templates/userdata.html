@@ -1,0 +1,46 @@
+<template name="userdata">
+
+  <div class="container">
+    <h2>{{display_name}}</h2>
+    <hr>
+    <!-- dispay user data -->
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{{images.[0].url}}" class="img-responsive thumbnail">
+      </div>
+      <div class="col-md-9">
+          <h3><strong>User Information:</strong></h3>
+          <div class="row">
+            <div class="col-xs-4 col-sm-3 text-right">
+              <strong>User ID:</strong>
+            </div>
+            <div class="col-xs-8 col-sm-9">
+              {{id}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-sm-3 text-right">
+              <strong>Email:</strong>
+            </div>
+            <div class="col-xs-8 col-sm-9">
+              {{email}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-sm-3 text-right">
+              <strong>Followers:</strong>
+            </div>
+            <div class="col-xs-8 col-sm-9">
+              {{followers.total}}
+            </div>
+          </div>
+          <hr>
+          <a class="btn btn-lg btn-success" target="_blank" href="{{external_urls.spotify}}">
+            View User in Spotify
+          </a>
+      </div>
+    </div>
+    <!-- end div class container -->
+  </div>
+
+</template>

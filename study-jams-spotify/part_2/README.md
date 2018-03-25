@@ -33,11 +33,40 @@ To refresh your memory on what templates are we are going to work on creating tw
 Let's navigate to the following path: `client/templates/login.html`
 Open up the login.html file in your favorite text editor.
 
-Here's where the fun happens!
+### Login Button
+Let's use some Bootstrap to create a simple Login button. In our `login.html` let's create the simple markup for our template.
 
-### Bootstrap
+```HTML
+    <template name="login">
+        <button class="btn btn-lg btn-success">Login with Spotify</button>
+    </template>
+```
+
+Let's add some functionality to our button. We need to add an identifier so that way when we create a funciton we know which element we need to target. Let's create our login functionality.
+
+### Login.js
+For this section we will be working with the following files:
 
 
+
+```js
+// login
+Template.login.events({
+    'click #loginButton':function() {
+        var options = {
+            showDialog: true, // Whether or not to force the user to approve the app again if they’ve already done so.
+            requestPermissions: ['user-read-email playlist-read-private playlist-modify-public playlist-modify-private playlist-read-collaborative'] // Spotify access scopes.
+        };
+        Meteor.loginWithSpotify(options, function(err) {
+            console.log(err || "No error");
+        });
+    }
+});
+```
+
+
+
+[End Result](final/client/templates/login.html)
 
 ## Deploying Your App to Microsoft Azure
 ### Using Your Microsoft Azure Pass

@@ -1,0 +1,23 @@
+<template name="artists">
+  <h3>Search Results:</h3>
+  <hr>
+  <div class="container">
+    {{#each artists}}
+    <div class="row">
+      <div class="col-sm-4 col-xs-7 col-xs-offset-1">
+        <img class="fix-width thumbnail" src="{{ images.[0].url }}">
+      </div>
+      <div class="col-sm-8">
+        <h4><a href="{{external_urls.spotify}}" target="_blank">{{name}}</a></h4>
+        <ul>
+          {{#each genres}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</template>
