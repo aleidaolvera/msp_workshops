@@ -19,6 +19,11 @@ The purpose of this study jam is to present to you a cool way to learn JavaScrip
 ### Download Starter Code
 Head over to https://tinyurl.com/study-jams-spotify-2 to download the starter code for this workshop.
 
+### Adding Package Dependencies
+Enter the following commands after creating your bare bones app:
+        meteor add twbs:bootstrap
+        meteor add iron:router
+
 ## Getting Spotify Developer Account Information
 Navigate back to your Spotify Developer Account that you created in the last workshop. Be sure to take note of the following information:
 - Client ID
@@ -129,6 +134,7 @@ So what are helper functions? Helper functions are functions that _**help**_ us 
 Let's create a helper function to talk to Spotify and send us information about a specific artist we search up.
 
 #### Grabbing Artist Information
+
 
 #### End Results:
 - [login template](final/client/templates/login.html)
