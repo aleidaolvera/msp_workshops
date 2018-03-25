@@ -1,0 +1,17 @@
+{
+  "meteor-azure": {
+    "siteName": "learn-meteor",
+    "resourceGroup": "learn-meteor",
+    "subscriptionId": "4cf9f681-63d7-4b18-83e0-9af4b8f2aa39",
+    "tenantId": "stdntpartners.onmicrosoft.com",
+    "deploymentCreds": {
+      "username": "learn-meteor",
+      "password": "admin123"
+    },
+    "envVariables": {
+      "ROOT_URL": "https://learn-meteor.azurewebsites.net",
+      "MONGO_URL": "MongoDB URL"
+    }
+  }
+
+}

@@ -24,6 +24,9 @@ Enter the following commands after creating your bare bones app:
 
         meteor add twbs:bootstrap
         meteor add iron:router
+        meteor add xinranxiao:spotify-web-api
+        meteor add xinranxiao:accounts-spotify
+
 
 ## Getting Spotify Developer Account Information
 Navigate back to your Spotify Developer Account that you created in the last workshop. Be sure to take note of the following information:
