@@ -21,6 +21,7 @@ Head over to https://tinyurl.com/study-jams-spotify-2 to download the starter co
 
 ### Adding Package Dependencies
 Enter the following commands after creating your bare bones app:
+
         meteor add twbs:bootstrap
         meteor add iron:router
 
