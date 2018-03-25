@@ -5,15 +5,15 @@ The purpose of this study jam is to present to you a cool way to learn JavaScrip
 
 ## Workshop Todo's:
 #### Part 1:
-* Learn to use Meteor
-* Create a bare bones web app
-* Learn how to create a Spotify Developer account
+- [ ] Learn to use Meteor
+- [ ] Create a bare bones web app
+- [ ] Learn how to create a Spotify Developer account
 
 #### Part 2:
-* Learn to use Spotify's Web API
-* Connect Spotify Developer account with your Meteor app
-* Pull in artist information
-* Deploy your app to Microsoft Azure
+- [ ] Learn to use Spotify's Web API
+- [ ] Connect Spotify Developer account with your Meteor app
+- [ ] Pull in artist information
+- [ ] Deploy your app to Microsoft Azure
 
 ## Getting Started
 ### Setting Up Meteor
@@ -55,6 +55,42 @@ To run the newly created app:
 Open your web browser and go to http://localhost:3000 to see the app running.
 
 You can play around with this default app for a bit before we continue. For example, try editing the text in `<h1>` inside client/main.html using your favorite text editor.
+
+### Adding Packages in Meteor
+What's really cool about Meteor's library is the fact that we can take other people's already created code and use it in our project. Have you heard of [Bootstrap](https://getbootstrap.com/) &mdash; the popular CSS framework?
+
+Let's add some packages to our Meteor application. Type in the following commands:
+
+        meteor add twbs:bootstrap
+        meteor add iron:router
+
+#### Bootstrap
+Let's paste the following code in our [`navbar.html`](navbar.html) file:
+```HTML
+<template name="navbar">
+  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Microsoft at GU</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/user">User Information</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+</template>
+
+```
+Let's talk about what it does.
 
 ## Creating and Customizing Templates
 To start working on our `spotify-study-jam` app, let's replace the code of the default starter app (`client/main.html`) with the code below. Then we'll talk about what it does.
@@ -98,44 +134,11 @@ Let's test this out by creating some new folders that we can organize our files 
         search.html     # for our search bar
         userdata.html   # presenting user data
 
-### Adding Packages in Meteor
-What's really cool about Meteor's library is the fact that we can take other people's already created code and use it in our project. Have you heard of [Bootstrap](https://getbootstrap.com/) &mdash; the popular CSS framework?
-
-Let's add some packages to our Meteor application. Type in the following commands:
-
-        meteor add twbs:bootstrap
-        meteor add iron:router
-
-#### Bootstrap
-Let's paste the following code in our [`navbar.html`](navbar.html) file:
-```HTML
-<template name="navbar">
-  <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">learnMeteor</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/user">User Information</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-</template>
-
-```
-Let's talk about what it does.
+#### Errors: Let's talk about Iron Router!
+You notice that we have had an error on our screen about not having a path for "/" defined. Let's talk about how to fix it.
 
 #### Iron Router
-Now that we have a basic understanding of what our application is doing. Let's try and give the app some navigation. We're going to populate the other files that we just created and give our meteor applicaiton the ability to _**render**_ different layouts for different urls.
+Now that we have a basic understanding of templates, so let's use templates to give the app some navigation. We're going to populate the other files that we just created and give our meteor applicaiton the ability to _**render**_ different layouts for different urls.
 
 Let's create the following folder / file heirarchy:
 
@@ -157,18 +160,12 @@ Copy and paste the following code into the [router.js](router.js) file.
       this.route('/', function() {
         this.render('search');
       });
-
-      this.route('/user', {
-          name: 'userdata',
-          data: function(){
-              return Session.get('user');
-          }
-      });
     });
 
 ```
 
-Let's di
+Now let's talk about what just went on.
+
 
 ## Setting Up Spotify Developer Account
 Let's take a bit of a coding break and learn a bit more about Spotify's Web API.
@@ -183,4 +180,4 @@ Let's take a bit of a coding break and learn a bit more about Spotify's Web API.
 > Come back next week so we can go further in depth on how we can utilize Spotify's Web API and incorporate it into our application.
 
 #### Further Practice
-Come next week with some ideas on what you want to incorporate to our web application!
+Bring in some ideas on what you want to incorporate to our web application for next week!
