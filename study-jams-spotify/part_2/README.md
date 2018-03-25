@@ -118,6 +118,7 @@ var checkTokenRefreshed = function(response, api) {
   </div>
 </template>
 ```
+
 Suggestions:
 - How do we want the Artists information to pop up?
 - What exactly are we looking for?
