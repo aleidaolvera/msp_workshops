@@ -1,6 +1,6 @@
 # Microsoft Unity Workshop
-> By Aleida Olvera, Georgetown University's Microsoft Student Partner
-The purpose of this workshop is to create a Flappy Bird Style game in [Unity 3D](https://unity3d.com/get-unity/download).
+> By Aleida Olvera, Georgetown University's Microsoft Student Partner.</br>
+> The purpose of this workshop is to create a Flappy Bird Style game in [Unity 3D](https://unity3d.com/get-unity/download).
 
 ## Workshop Todo's:
 - [ ] Download Unity
