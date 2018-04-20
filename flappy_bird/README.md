@@ -1,6 +1,6 @@
 # Microsoft Unity Workshop
 > By Aleida Olvera, Georgetown University's Microsoft Student Partner
-The purpose of this workshop is to create a Flappy Bird Style game in [Unity 3D]("https://unity3d.com/get-unity/download").
+The purpose of this workshop is to create a Flappy Bird Style game in [Unity 3D](https://unity3d.com/get-unity/download).
 
 ## Workshop Todo's:
 - [ ] Download Unity
@@ -8,7 +8,7 @@ The purpose of this workshop is to create a Flappy Bird Style game in [Unity 3D]
 - [ ] Create your own flappy bird game!
 
 ## Installing Unity3D
-Head over to the [Unity Download website]("https://unity3d.com/get-unity/download") to download Unity 3D.
+Head over to the [Unity Download website](https://unity3d.com/get-unity/download) to download Unity 3D.
 
 ## Creating a Project
 * First we will create a project and select a folder to save your work in.
