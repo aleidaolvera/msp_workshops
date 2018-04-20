@@ -16,7 +16,7 @@ Head over to the [Unity Download website]("https://unity3d.com/get-unity/downloa
 
 ## Organizing your Project
 <p align="center">
-![Project Window](/img/project.png)
+![Project Window](img/project.png)
 </p>
 Navigate to the project window and create the following folder structure.
 - Prefabs
@@ -33,13 +33,13 @@ Alternatively, you can download this repo and drag the folders directly to your 
 ## Setting Up the Game
 ### The Background
 <p align="center">
-![Project Window](/img/background.png)
+![Project Window](img/background.png)
 </p>
 Head over to your Sprites folder and select the background image. Drag and drop that image directly to your scene.
 
 ### The Player
 <p align="center">
-![Background Selections](/img/sprite.png)
+![Background Selections](img/sprite.png)
 </p>
 Similar to what we did with our background, we will drag and drop any one of our players to the screen. Position the player to the center by changing the position the same way we did to our background.
 > **KEY**: Make sure to change the `Z-Position` of the player to 1 so the player is always in the front.
