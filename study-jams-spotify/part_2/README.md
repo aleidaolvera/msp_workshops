@@ -1,5 +1,5 @@
 # Study Jam: Spotify Edition
-> By Aleida Olvera, Georgetown University's Microsoft Student Partner
+> By Aleida Olvera, Georgetown's Microsoft Student Partner
 
 The purpose of this study jam is to present to you a cool way to learn JavaScript and utilize different Web API's through [Meteor's](https://www.meteor.com/ "Meteor: An open source platform for web, mobile, and desktop.") building packaging platform!
 
@@ -138,80 +138,6 @@ So what are helper functions? Helper functions are functions that _**help**_ us 
 Let's create a helper function to talk to Spotify and send us information about a specific artist we search up.
 
 #### Grabbing Artist Information
-We have to create some methods in Meteor so that way we can talk to our web app and tell it what to do with the fields the client has available to them. Let's make a quick function using our handy [Spotify Web API](https://github.com/JMPerez/spotify-web-api-js) that allows us to pull in artist information based on the query a user inputs on the form field.
-
-We have to first communicate to the API via the server, so let's start writing code in our `server/main.js` file!
-
-```js
-import { Meteor } from 'meteor/meteor';
-
-Meteor.methods({
-    'searchArtists'(searchText){
-        var spotifyApi = new SpotifyWebApi();
-        //grab JSON list of albums based on text search
-        var response = spotifyApi.searchArtists(searchText, {
-          limit: 5
-        });
-        // Need to refresh token
-        if (checkTokenRefreshed(response, spotifyApi)) {
-          response = spotifyApi.searchArtists(searchText, {
-            limit: 5
-          });
-        }
-        return response.data.body.artists.items;
-    },
-});
-
-var checkTokenRefreshed = function(response, api) {
-  if (response.error && response.error.statusCode === 401) {
-    api.refreshAndUpdateAccessToken();
-    return true;
-  }
-  else {
-    return false;
-  }
-};
-
-```
-Now let's talk about what we just wrote.
-
-Now that we have our server up and running, we have to communicate to the client to present the information that was just returned from the API. Let's go ahead and write a ***helper function*** that will do this in our `client/main.js` file.
-
-```js
-
-// helper functions
-Template.artists.helpers({
-    artists() {
-        return Session.get('artists');
-    }
-});
-
-// search event function
-Template.search.events({
-    'keyup #searchArtists': function(event) {
-        let searchText = event.target.value;
-        if(searchText == '') {
-            Session.set('artists', null);
-        }
-        Meteor.call('searchArtists', searchText, function(error, response){
-            if(error){
-                console.log("error", error);
-            }
-            if(response){
-                Session.set('artists', response);
-                console.log(response);
-            }
-        });
-    }
-});
-
-// login function
-// .... .... ....
-// .... .... ....
-// .... .... ....
-// end of file
-```
-Now let's talk about what's going on in this code.
 
 
 #### End Results:
